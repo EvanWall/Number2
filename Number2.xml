@@ -128,12 +128,4 @@
       </block>
     </next>
   </block>
-  <block type="variables_set" id="47" inline="true" x="213" y="387">
-    <field name="VAR">blue</field>
-    <value name="VALUE">
-      <block type="sensor_spectrometer" id="48">
-        <field name="LIGHT">BLUE</field>
-      </block>
-    </value>
-  </block>
 </xml>
