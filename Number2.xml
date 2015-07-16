@@ -49,7 +49,7 @@
                             <field name="TEXT">Blue = </field>
                             <next>
                               <block type="procedures_callnoreturn" id="14" inline="false">
-                                <mutation name="subroutineName">
+                                <mutation name="displayValue">
                                   <arg name="value"></arg>
                                   <arg name="row"></arg>
                                 </mutation>
@@ -117,7 +117,7 @@
       <arg name="value"></arg>
       <arg name="row"></arg>
     </mutation>
-    <field name="NAME">subroutineName</field>
+    <field name="NAME">displayValue</field>
     <statement name="STACK">
       <block type="controls_if" id="25" inline="false">
         <mutation elseif="1" else="1"></mutation>
@@ -137,34 +137,34 @@
           </block>
         </value>
         <value name="IF1">
-          <block type="logic_compare" id="31" inline="true">
+          <block type="logic_compare" id="29" inline="true">
             <field name="OP">GT</field>
             <value name="A">
-              <block type="variables_get" id="32">
+              <block type="variables_get" id="30">
                 <field name="VAR">value</field>
               </block>
             </value>
             <value name="B">
-              <block type="math_number" id="33">
+              <block type="math_number" id="31">
                 <field name="NUM">9</field>
               </block>
             </value>
           </block>
         </value>
         <statement name="DO1">
-          <block type="oled_drawtext" id="34">
+          <block type="oled_drawtext" id="32">
             <field name="TEXT"></field>
           </block>
         </statement>
         <statement name="ELSE">
-          <block type="oled_drawtext" id="35">
+          <block type="oled_drawtext" id="33">
             <field name="TEXT"></field>
           </block>
         </statement>
         <next>
-          <block type="oled_drawnumber" id="29" inline="true">
+          <block type="oled_drawnumber" id="34" inline="true">
             <value name="NUMBER">
-              <block type="variables_get" id="30">
+              <block type="variables_get" id="35">
                 <field name="VAR">value</field>
               </block>
             </value>
