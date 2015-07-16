@@ -46,7 +46,7 @@
                         </value>
                         <next>
                           <block type="oled_drawtext" id="13">
-                            <field name="TEXT">Blue =</field>
+                            <field name="TEXT">Blue = </field>
                             <next>
                               <block type="procedures_callnoreturn" id="14" inline="false">
                                 <mutation name="subroutineName">
