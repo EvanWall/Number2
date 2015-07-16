@@ -41,17 +41,8 @@
           </block>
         </value>
         <statement name="DO">
-          <block type="movement_setmotors" id="10" inline="true">
-            <value name="BOTHMOVLEFT">
-              <block type="math_number" id="11">
-                <field name="NUM">80</field>
-              </block>
-            </value>
-            <value name="BOTHMOVRIGHT">
-              <block type="math_number" id="12">
-                <field name="NUM">100</field>
-              </block>
-            </value>
+          <block type="procedures_callnoreturn" id="695">
+            <mutation name="subroutineStraight"></mutation>
             <next>
               <block type="oled_cleardisplay" id="13">
                 <next>
@@ -230,7 +221,8 @@
                                                                                   </block>
                                                                                 </value>
                                                                                 <next>
-                                                                                  <block type="movement_forward" id="55">
+                                                                                  <block type="procedures_callnoreturn" id="711">
+                                                                                    <mutation name="subroutineStraight"></mutation>
                                                                                     <next>
                                                                                       <block type="robot_delay" id="119" inline="true">
                                                                                         <value name="DELAY">
@@ -278,7 +270,8 @@
                                                                                                   </block>
                                                                                                 </value>
                                                                                                 <next>
-                                                                                                  <block type="movement_forward" id="65">
+                                                                                                  <block type="procedures_callnoreturn" id="717">
+                                                                                                    <mutation name="subroutineStraight"></mutation>
                                                                                                     <next>
                                                                                                       <block type="variables_set" id="627" inline="true">
                                                                                                         <field name="VAR">Turn</field>
@@ -350,5 +343,23 @@
         </next>
       </block>
     </next>
+  </block>
+  <block type="procedures_defnoreturn" id="675" x="640" y="-196">
+    <mutation></mutation>
+    <field name="NAME">subroutineStraight</field>
+    <statement name="STACK">
+      <block type="movement_setmotors" id="10" inline="true">
+        <value name="BOTHMOVLEFT">
+          <block type="math_number" id="11">
+            <field name="NUM">80</field>
+          </block>
+        </value>
+        <value name="BOTHMOVRIGHT">
+          <block type="math_number" id="12">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+    </statement>
   </block>
 </xml>
