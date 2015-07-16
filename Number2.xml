@@ -1,130 +1,173 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="162" inline="false" x="237" y="-79">
-    <field name="MODE">UNTIL</field>
-    <value name="NUMBER">
-      <block type="logic_compare" id="250" inline="true">
-        <field name="OP">GT</field>
-        <value name="A">
-          <block type="sensor_spectrometer" id="251">
-            <field name="LIGHT">BLUE</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="252">
-            <field name="NUM">80</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="movement_setmotors" id="36" inline="true">
-        <value name="BOTHMOVLEFT">
-          <block type="math_number" id="115">
-            <field name="NUM">100</field>
-          </block>
-        </value>
-        <value name="BOTHMOVRIGHT">
-          <block type="math_number" id="116">
-            <field name="NUM">100</field>
-          </block>
-        </value>
-      </block>
-    </statement>
+  <block type="oled_cleardisplay" id="105" x="211" y="-180">
     <next>
-      <block type="controls_whileUntil" id="37" inline="false">
+      <block type="controls_whileUntil" id="87" inline="false">
         <field name="MODE">UNTIL</field>
         <value name="NUMBER">
-          <block type="logic_compare" id="38" inline="true">
+          <block type="logic_compare" id="88" inline="true">
             <field name="OP">GT</field>
             <value name="A">
-              <block type="sensor_spectrometer" id="39">
-                <field name="LIGHT">RED</field>
+              <block type="sensor_spectrometer" id="89">
+                <field name="LIGHT">BLUE</field>
               </block>
             </value>
             <value name="B">
-              <block type="math_number" id="40">
-                <field name="NUM">70</field>
+              <block type="math_number" id="90">
+                <field name="NUM">80</field>
               </block>
             </value>
           </block>
         </value>
         <statement name="DO">
-          <block type="variables_set" id="41" inline="true">
-            <field name="VAR">red</field>
-            <value name="VALUE">
-              <block type="sensor_spectrometer" id="42">
-                <field name="LIGHT">RED</field>
+          <block type="oled_setcursor" id="1" inline="true">
+            <value name="STARTX">
+              <block type="math_number" id="2">
+                <field name="NUM">10</field>
               </block>
             </value>
-          </block>
-        </statement>
-        <next>
-          <block type="controls_whileUntil" id="1" inline="false">
-            <field name="MODE">UNTIL</field>
-            <value name="NUMBER">
-              <block type="logic_compare" id="2" inline="true">
-                <field name="OP">GT</field>
-                <value name="A">
-                  <block type="sensor_spectrometer" id="3">
-                    <field name="LIGHT">BLUE</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="4">
-                    <field name="NUM">80</field>
-                  </block>
-                </value>
+            <value name="STARTY">
+              <block type="math_number" id="3">
+                <field name="NUM">0</field>
               </block>
             </value>
-            <statement name="DO">
-              <block type="variables_set" id="5" inline="true">
-                <field name="VAR">blue</field>
-                <value name="VALUE">
-                  <block type="sensor_spectrometer" id="6">
-                    <field name="LIGHT">BLUE</field>
-                  </block>
-                </value>
-              </block>
-            </statement>
             <next>
-              <block type="movement_stop" id="99">
+              <block type="oled_drawtext" id="59">
+                <field name="TEXT">Blue =</field>
                 <next>
-                  <block type="controls_whileUntil" id="43" inline="false">
+                  <block type="controls_whileUntil" id="4" inline="false">
                     <field name="MODE">UNTIL</field>
                     <value name="NUMBER">
-                      <block type="logic_compare" id="44" inline="true">
-                        <field name="OP">LT</field>
+                      <block type="logic_compare" id="5" inline="true">
+                        <field name="OP">GT</field>
                         <value name="A">
-                          <block type="sensor_spectrometer" id="45">
-                            <field name="LIGHT">IR940</field>
+                          <block type="sensor_spectrometer" id="6">
+                            <field name="LIGHT">BLUE</field>
                           </block>
                         </value>
                         <value name="B">
-                          <block type="math_number" id="46">
-                            <field name="NUM">50</field>
+                          <block type="math_number" id="7">
+                            <field name="NUM">80</field>
                           </block>
                         </value>
                       </block>
                     </value>
                     <statement name="DO">
-                      <block type="variables_set" id="7" inline="true">
-                        <field name="VAR">ir940</field>
-                        <value name="VALUE">
-                          <block type="sensor_spectrometer" id="8">
-                            <field name="LIGHT">IR940</field>
+                      <block type="movement_setmotors" id="8" inline="true">
+                        <value name="BOTHMOVLEFT">
+                          <block type="math_number" id="9">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                        <value name="BOTHMOVRIGHT">
+                          <block type="math_number" id="10">
+                            <field name="NUM">100</field>
                           </block>
                         </value>
                       </block>
                     </statement>
                     <next>
-                      <block type="movement_stop" id="65"></block>
+                      <block type="controls_whileUntil" id="11" inline="false">
+                        <field name="MODE">UNTIL</field>
+                        <value name="NUMBER">
+                          <block type="logic_compare" id="12" inline="true">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="sensor_spectrometer" id="13">
+                                <field name="LIGHT">RED</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="14">
+                                <field name="NUM">70</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="variables_set" id="15" inline="true">
+                            <field name="VAR">red</field>
+                            <value name="VALUE">
+                              <block type="sensor_spectrometer" id="16">
+                                <field name="LIGHT">RED</field>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="controls_whileUntil" id="17" inline="false">
+                            <field name="MODE">UNTIL</field>
+                            <value name="NUMBER">
+                              <block type="logic_compare" id="18" inline="true">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="sensor_spectrometer" id="19">
+                                    <field name="LIGHT">BLUE</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="20">
+                                    <field name="NUM">80</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="variables_set" id="21" inline="true">
+                                <field name="VAR">blue</field>
+                                <value name="VALUE">
+                                  <block type="sensor_spectrometer" id="22">
+                                    <field name="LIGHT">BLUE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="movement_stop" id="23">
+                                <next>
+                                  <block type="controls_whileUntil" id="24" inline="false">
+                                    <field name="MODE">UNTIL</field>
+                                    <value name="NUMBER">
+                                      <block type="logic_compare" id="25" inline="true">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="sensor_spectrometer" id="26">
+                                            <field name="LIGHT">IR940</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="27">
+                                            <field name="NUM">50</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="variables_set" id="28" inline="true">
+                                        <field name="VAR">ir940</field>
+                                        <value name="VALUE">
+                                          <block type="sensor_spectrometer" id="29">
+                                            <field name="LIGHT">IR940</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="movement_stop" id="30"></block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
                     </next>
                   </block>
                 </next>
               </block>
             </next>
           </block>
-        </next>
+        </statement>
       </block>
     </next>
   </block>
