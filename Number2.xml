@@ -33,7 +33,7 @@
       </block>
     </statement>
   </block>
-  <block type="variables_set" id="8" inline="true" x="70" y="-73">
+  <block type="variables_set" id="8" inline="true" x="74" y="-78">
     <field name="VAR">Turn</field>
     <value name="VALUE">
       <block type="math_number" id="9">
@@ -41,311 +41,331 @@
       </block>
     </value>
     <next>
-      <block type="controls_whileUntil" id="10" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="logic_operation" id="301" inline="true">
-            <field name="OP">LAND</field>
+      <block type="variables_set" id="243" inline="true">
+        <field name="VAR">RedandBlue</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="149" inline="true">
+            <field name="OP">ADD</field>
             <value name="A">
-              <block type="logic_compare" id="417" inline="true">
-                <field name="OP">GT</field>
-                <value name="A">
-                  <block type="variables_get" id="287">
-                    <field name="VAR">RedandBlue</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="13">
-                    <field name="NUM">140</field>
-                  </block>
-                </value>
+              <block type="sensor_spectrometer" id="150">
+                <field name="LIGHT">BLUE</field>
               </block>
             </value>
             <value name="B">
-              <block type="logic_compare" id="430" inline="true">
-                <field name="OP">LT</field>
-                <value name="A">
-                  <block type="variables_get" id="431">
-                    <field name="VAR">RedandBlue</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="432">
-                    <field name="NUM">160</field>
-                  </block>
-                </value>
+              <block type="sensor_spectrometer" id="151">
+                <field name="LIGHT">RED</field>
               </block>
             </value>
           </block>
         </value>
-        <statement name="DO">
-          <block type="variables_set" id="243" inline="true">
-            <field name="VAR">RedandBlue</field>
-            <value name="VALUE">
-              <block type="math_arithmetic" id="149" inline="true">
-                <field name="OP">ADD</field>
+        <next>
+          <block type="controls_whileUntil" id="10" inline="false">
+            <field name="MODE">UNTIL</field>
+            <value name="NUMBER">
+              <block type="logic_operation" id="301" inline="true">
+                <field name="OP">LAND</field>
                 <value name="A">
-                  <block type="sensor_spectrometer" id="150">
-                    <field name="LIGHT">BLUE</field>
+                  <block type="logic_compare" id="417" inline="true">
+                    <field name="OP">GT</field>
+                    <value name="A">
+                      <block type="variables_get" id="287">
+                        <field name="VAR">RedandBlue</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="13">
+                        <field name="NUM">140</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
                 <value name="B">
-                  <block type="sensor_spectrometer" id="151">
-                    <field name="LIGHT">RED</field>
+                  <block type="logic_compare" id="430" inline="true">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="431">
+                        <field name="VAR">RedandBlue</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="432">
+                        <field name="NUM">160</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
               </block>
             </value>
-            <next>
-              <block type="procedures_callnoreturn" id="14">
-                <mutation name="subroutineStraight"></mutation>
+            <statement name="DO">
+              <block type="variables_set" id="433" inline="true">
+                <field name="VAR">RedandBlue</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="434" inline="true">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="sensor_spectrometer" id="435">
+                        <field name="LIGHT">BLUE</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="sensor_spectrometer" id="436">
+                        <field name="LIGHT">RED</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
                 <next>
-                  <block type="oled_cleardisplay" id="15">
+                  <block type="procedures_callnoreturn" id="14">
+                    <mutation name="subroutineStraight"></mutation>
                     <next>
-                      <block type="variables_set" id="16" inline="true">
-                        <field name="VAR">Blue</field>
-                        <value name="VALUE">
-                          <block type="sensor_spectrometer" id="17">
-                            <field name="LIGHT">BLUE</field>
-                          </block>
-                        </value>
+                      <block type="oled_cleardisplay" id="15">
                         <next>
-                          <block type="variables_set" id="18" inline="true">
-                            <field name="VAR">Red</field>
+                          <block type="variables_set" id="16" inline="true">
+                            <field name="VAR">Blue</field>
                             <value name="VALUE">
-                              <block type="sensor_spectrometer" id="19">
-                                <field name="LIGHT">RED</field>
+                              <block type="sensor_spectrometer" id="17">
+                                <field name="LIGHT">BLUE</field>
                               </block>
                             </value>
                             <next>
-                              <block type="variables_set" id="20" inline="true">
-                                <field name="VAR">Black</field>
+                              <block type="variables_set" id="18" inline="true">
+                                <field name="VAR">Red</field>
                                 <value name="VALUE">
-                                  <block type="sensor_spectrometer" id="21">
-                                    <field name="LIGHT">IR940</field>
+                                  <block type="sensor_spectrometer" id="19">
+                                    <field name="LIGHT">RED</field>
                                   </block>
                                 </value>
                                 <next>
-                                  <block type="oled_setcursor" id="22" inline="true">
-                                    <value name="STARTX">
-                                      <block type="math_number" id="23">
-                                        <field name="NUM">10</field>
-                                      </block>
-                                    </value>
-                                    <value name="STARTY">
-                                      <block type="math_number" id="24">
-                                        <field name="NUM">0</field>
+                                  <block type="variables_set" id="20" inline="true">
+                                    <field name="VAR">Black</field>
+                                    <value name="VALUE">
+                                      <block type="sensor_spectrometer" id="21">
+                                        <field name="LIGHT">IR940</field>
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="oled_drawtext" id="25">
-                                        <field name="TEXT">Blue = </field>
+                                      <block type="oled_setcursor" id="22" inline="true">
+                                        <value name="STARTX">
+                                          <block type="math_number" id="23">
+                                            <field name="NUM">10</field>
+                                          </block>
+                                        </value>
+                                        <value name="STARTY">
+                                          <block type="math_number" id="24">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
                                         <next>
-                                          <block type="procedures_callnoreturn" id="26" inline="false">
-                                            <mutation name="displayValue">
-                                              <arg name="value"></arg>
-                                              <arg name="row"></arg>
-                                            </mutation>
-                                            <value name="ARG0">
-                                              <block type="variables_get" id="27">
-                                                <field name="VAR">Blue</field>
-                                              </block>
-                                            </value>
-                                            <value name="ARG1">
-                                              <block type="math_number" id="28">
-                                                <field name="NUM">0</field>
-                                              </block>
-                                            </value>
+                                          <block type="oled_drawtext" id="25">
+                                            <field name="TEXT">Blue = </field>
                                             <next>
-                                              <block type="oled_setcursor" id="29" inline="true">
-                                                <value name="STARTX">
-                                                  <block type="math_number" id="30">
-                                                    <field name="NUM">10</field>
+                                              <block type="procedures_callnoreturn" id="26" inline="false">
+                                                <mutation name="displayValue">
+                                                  <arg name="value"></arg>
+                                                  <arg name="row"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="variables_get" id="27">
+                                                    <field name="VAR">Blue</field>
                                                   </block>
                                                 </value>
-                                                <value name="STARTY">
-                                                  <block type="math_number" id="31">
-                                                    <field name="NUM">10</field>
+                                                <value name="ARG1">
+                                                  <block type="math_number" id="28">
+                                                    <field name="NUM">0</field>
                                                   </block>
                                                 </value>
                                                 <next>
-                                                  <block type="oled_drawtext" id="32">
-                                                    <field name="TEXT">Red = </field>
+                                                  <block type="oled_setcursor" id="29" inline="true">
+                                                    <value name="STARTX">
+                                                      <block type="math_number" id="30">
+                                                        <field name="NUM">10</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="STARTY">
+                                                      <block type="math_number" id="31">
+                                                        <field name="NUM">10</field>
+                                                      </block>
+                                                    </value>
                                                     <next>
-                                                      <block type="procedures_callnoreturn" id="33" inline="false">
-                                                        <mutation name="displayValue">
-                                                          <arg name="value"></arg>
-                                                          <arg name="row"></arg>
-                                                        </mutation>
-                                                        <value name="ARG0">
-                                                          <block type="variables_get" id="34">
-                                                            <field name="VAR">Red</field>
-                                                          </block>
-                                                        </value>
-                                                        <value name="ARG1">
-                                                          <block type="math_number" id="35">
-                                                            <field name="NUM">10</field>
-                                                          </block>
-                                                        </value>
+                                                      <block type="oled_drawtext" id="32">
+                                                        <field name="TEXT">Red = </field>
                                                         <next>
-                                                          <block type="oled_setcursor" id="36" inline="true">
-                                                            <value name="STARTX">
-                                                              <block type="math_number" id="37">
+                                                          <block type="procedures_callnoreturn" id="33" inline="false">
+                                                            <mutation name="displayValue">
+                                                              <arg name="value"></arg>
+                                                              <arg name="row"></arg>
+                                                            </mutation>
+                                                            <value name="ARG0">
+                                                              <block type="variables_get" id="34">
+                                                                <field name="VAR">Red</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="ARG1">
+                                                              <block type="math_number" id="35">
                                                                 <field name="NUM">10</field>
                                                               </block>
                                                             </value>
-                                                            <value name="STARTY">
-                                                              <block type="math_number" id="38">
-                                                                <field name="NUM">20</field>
-                                                              </block>
-                                                            </value>
                                                             <next>
-                                                              <block type="oled_drawtext" id="39">
-                                                                <field name="TEXT">Black = </field>
+                                                              <block type="oled_setcursor" id="36" inline="true">
+                                                                <value name="STARTX">
+                                                                  <block type="math_number" id="37">
+                                                                    <field name="NUM">10</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="STARTY">
+                                                                  <block type="math_number" id="38">
+                                                                    <field name="NUM">20</field>
+                                                                  </block>
+                                                                </value>
                                                                 <next>
-                                                                  <block type="procedures_callnoreturn" id="40" inline="false">
-                                                                    <mutation name="displayValue">
-                                                                      <arg name="value"></arg>
-                                                                      <arg name="row"></arg>
-                                                                    </mutation>
-                                                                    <value name="ARG0">
-                                                                      <block type="variables_get" id="41">
-                                                                        <field name="VAR">Black</field>
-                                                                      </block>
-                                                                    </value>
-                                                                    <value name="ARG1">
-                                                                      <block type="math_number" id="42">
-                                                                        <field name="NUM">20</field>
-                                                                      </block>
-                                                                    </value>
+                                                                  <block type="oled_drawtext" id="39">
+                                                                    <field name="TEXT">Black = </field>
                                                                     <next>
-                                                                      <block type="controls_if" id="43" inline="false">
-                                                                        <value name="IF0">
-                                                                          <block type="logic_compare" id="44" inline="true">
-                                                                            <field name="OP">LT</field>
-                                                                            <value name="A">
-                                                                              <block type="sensor_spectrometer" id="45">
-                                                                                <field name="LIGHT">IR940</field>
-                                                                              </block>
-                                                                            </value>
-                                                                            <value name="B">
-                                                                              <block type="math_number" id="46">
-                                                                                <field name="NUM">60</field>
-                                                                              </block>
-                                                                            </value>
+                                                                      <block type="procedures_callnoreturn" id="40" inline="false">
+                                                                        <mutation name="displayValue">
+                                                                          <arg name="value"></arg>
+                                                                          <arg name="row"></arg>
+                                                                        </mutation>
+                                                                        <value name="ARG0">
+                                                                          <block type="variables_get" id="41">
+                                                                            <field name="VAR">Black</field>
                                                                           </block>
                                                                         </value>
-                                                                        <statement name="DO0">
-                                                                          <block type="movement_stop" id="47">
-                                                                            <next>
-                                                                              <block type="movement_setmotors" id="48" inline="true">
-                                                                                <value name="BOTHMOVLEFT">
-                                                                                  <block type="math_arithmetic" id="49" inline="true">
-                                                                                    <field name="OP">MULTIPLY</field>
-                                                                                    <value name="A">
-                                                                                      <block type="math_number" id="50">
-                                                                                        <field name="NUM">-100</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                    <value name="B">
-                                                                                      <block type="variables_get" id="51">
-                                                                                        <field name="VAR">Turn</field>
-                                                                                      </block>
-                                                                                    </value>
+                                                                        <value name="ARG1">
+                                                                          <block type="math_number" id="42">
+                                                                            <field name="NUM">20</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="controls_if" id="43" inline="false">
+                                                                            <value name="IF0">
+                                                                              <block type="logic_compare" id="44" inline="true">
+                                                                                <field name="OP">LT</field>
+                                                                                <value name="A">
+                                                                                  <block type="sensor_spectrometer" id="45">
+                                                                                    <field name="LIGHT">IR940</field>
                                                                                   </block>
                                                                                 </value>
-                                                                                <value name="BOTHMOVRIGHT">
-                                                                                  <block type="math_arithmetic" id="52" inline="true">
-                                                                                    <field name="OP">MULTIPLY</field>
-                                                                                    <value name="A">
-                                                                                      <block type="math_number" id="53">
-                                                                                        <field name="NUM">100</field>
-                                                                                      </block>
-                                                                                    </value>
-                                                                                    <value name="B">
-                                                                                      <block type="variables_get" id="54">
-                                                                                        <field name="VAR">Turn</field>
-                                                                                      </block>
-                                                                                    </value>
+                                                                                <value name="B">
+                                                                                  <block type="math_number" id="46">
+                                                                                    <field name="NUM">60</field>
                                                                                   </block>
                                                                                 </value>
+                                                                              </block>
+                                                                            </value>
+                                                                            <statement name="DO0">
+                                                                              <block type="movement_stop" id="47">
                                                                                 <next>
-                                                                                  <block type="robot_delay" id="55" inline="true">
-                                                                                    <value name="DELAY">
-                                                                                      <block type="math_number" id="56">
-                                                                                        <field name="NUM">1200</field>
+                                                                                  <block type="movement_setmotors" id="48" inline="true">
+                                                                                    <value name="BOTHMOVLEFT">
+                                                                                      <block type="math_arithmetic" id="49" inline="true">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                          <block type="math_number" id="50">
+                                                                                            <field name="NUM">-100</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="51">
+                                                                                            <field name="VAR">Turn</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="BOTHMOVRIGHT">
+                                                                                      <block type="math_arithmetic" id="52" inline="true">
+                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                        <value name="A">
+                                                                                          <block type="math_number" id="53">
+                                                                                            <field name="NUM">100</field>
+                                                                                          </block>
+                                                                                        </value>
+                                                                                        <value name="B">
+                                                                                          <block type="variables_get" id="54">
+                                                                                            <field name="VAR">Turn</field>
+                                                                                          </block>
+                                                                                        </value>
                                                                                       </block>
                                                                                     </value>
                                                                                     <next>
-                                                                                      <block type="procedures_callnoreturn" id="57">
-                                                                                        <mutation name="subroutineStraight"></mutation>
+                                                                                      <block type="robot_delay" id="55" inline="true">
+                                                                                        <value name="DELAY">
+                                                                                          <block type="math_number" id="56">
+                                                                                            <field name="NUM">1200</field>
+                                                                                          </block>
+                                                                                        </value>
                                                                                         <next>
-                                                                                          <block type="robot_delay" id="58" inline="true">
-                                                                                            <value name="DELAY">
-                                                                                              <block type="math_number" id="59">
-                                                                                                <field name="NUM">1200</field>
-                                                                                              </block>
-                                                                                            </value>
+                                                                                          <block type="procedures_callnoreturn" id="57">
+                                                                                            <mutation name="subroutineStraight"></mutation>
                                                                                             <next>
-                                                                                              <block type="movement_setmotors" id="60" inline="true">
-                                                                                                <value name="BOTHMOVLEFT">
-                                                                                                  <block type="math_arithmetic" id="61" inline="true">
-                                                                                                    <field name="OP">MULTIPLY</field>
-                                                                                                    <value name="A">
-                                                                                                      <block type="math_number" id="62">
-                                                                                                        <field name="NUM">-100</field>
-                                                                                                      </block>
-                                                                                                    </value>
-                                                                                                    <value name="B">
-                                                                                                      <block type="variables_get" id="63">
-                                                                                                        <field name="VAR">Turn</field>
-                                                                                                      </block>
-                                                                                                    </value>
-                                                                                                  </block>
-                                                                                                </value>
-                                                                                                <value name="BOTHMOVRIGHT">
-                                                                                                  <block type="math_arithmetic" id="64" inline="true">
-                                                                                                    <field name="OP">MULTIPLY</field>
-                                                                                                    <value name="A">
-                                                                                                      <block type="math_number" id="65">
-                                                                                                        <field name="NUM">100</field>
-                                                                                                      </block>
-                                                                                                    </value>
-                                                                                                    <value name="B">
-                                                                                                      <block type="variables_get" id="66">
-                                                                                                        <field name="VAR">Turn</field>
-                                                                                                      </block>
-                                                                                                    </value>
+                                                                                              <block type="robot_delay" id="58" inline="true">
+                                                                                                <value name="DELAY">
+                                                                                                  <block type="math_number" id="59">
+                                                                                                    <field name="NUM">1200</field>
                                                                                                   </block>
                                                                                                 </value>
                                                                                                 <next>
-                                                                                                  <block type="robot_delay" id="67" inline="true">
-                                                                                                    <value name="DELAY">
-                                                                                                      <block type="math_number" id="68">
-                                                                                                        <field name="NUM">1200</field>
+                                                                                                  <block type="movement_setmotors" id="60" inline="true">
+                                                                                                    <value name="BOTHMOVLEFT">
+                                                                                                      <block type="math_arithmetic" id="61" inline="true">
+                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                        <value name="A">
+                                                                                                          <block type="math_number" id="62">
+                                                                                                            <field name="NUM">-100</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <value name="B">
+                                                                                                          <block type="variables_get" id="63">
+                                                                                                            <field name="VAR">Turn</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                      </block>
+                                                                                                    </value>
+                                                                                                    <value name="BOTHMOVRIGHT">
+                                                                                                      <block type="math_arithmetic" id="64" inline="true">
+                                                                                                        <field name="OP">MULTIPLY</field>
+                                                                                                        <value name="A">
+                                                                                                          <block type="math_number" id="65">
+                                                                                                            <field name="NUM">100</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <value name="B">
+                                                                                                          <block type="variables_get" id="66">
+                                                                                                            <field name="VAR">Turn</field>
+                                                                                                          </block>
+                                                                                                        </value>
                                                                                                       </block>
                                                                                                     </value>
                                                                                                     <next>
-                                                                                                      <block type="procedures_callnoreturn" id="69">
-                                                                                                        <mutation name="subroutineStraight"></mutation>
+                                                                                                      <block type="robot_delay" id="67" inline="true">
+                                                                                                        <value name="DELAY">
+                                                                                                          <block type="math_number" id="68">
+                                                                                                            <field name="NUM">1200</field>
+                                                                                                          </block>
+                                                                                                        </value>
                                                                                                         <next>
-                                                                                                          <block type="variables_set" id="70" inline="true">
-                                                                                                            <field name="VAR">Turn</field>
-                                                                                                            <value name="VALUE">
-                                                                                                              <block type="math_arithmetic" id="71" inline="true">
-                                                                                                                <field name="OP">MULTIPLY</field>
-                                                                                                                <value name="A">
-                                                                                                                  <block type="math_number" id="72">
-                                                                                                                    <field name="NUM">-1</field>
-                                                                                                                  </block>
-                                                                                                                </value>
-                                                                                                                <value name="B">
-                                                                                                                  <block type="variables_get" id="73">
-                                                                                                                    <field name="VAR">Turn</field>
+                                                                                                          <block type="procedures_callnoreturn" id="69">
+                                                                                                            <mutation name="subroutineStraight"></mutation>
+                                                                                                            <next>
+                                                                                                              <block type="variables_set" id="70" inline="true">
+                                                                                                                <field name="VAR">Turn</field>
+                                                                                                                <value name="VALUE">
+                                                                                                                  <block type="math_arithmetic" id="71" inline="true">
+                                                                                                                    <field name="OP">MULTIPLY</field>
+                                                                                                                    <value name="A">
+                                                                                                                      <block type="math_number" id="72">
+                                                                                                                        <field name="NUM">-1</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
+                                                                                                                    <value name="B">
+                                                                                                                      <block type="variables_get" id="73">
+                                                                                                                        <field name="VAR">Turn</field>
+                                                                                                                      </block>
+                                                                                                                    </value>
                                                                                                                   </block>
                                                                                                                 </value>
                                                                                                               </block>
-                                                                                                            </value>
+                                                                                                            </next>
                                                                                                           </block>
                                                                                                         </next>
                                                                                                       </block>
@@ -361,9 +381,9 @@
                                                                                   </block>
                                                                                 </next>
                                                                               </block>
-                                                                            </next>
+                                                                            </statement>
                                                                           </block>
-                                                                        </statement>
+                                                                        </next>
                                                                       </block>
                                                                     </next>
                                                                   </block>
@@ -393,11 +413,11 @@
                   </block>
                 </next>
               </block>
+            </statement>
+            <next>
+              <block type="movement_stop" id="74"></block>
             </next>
           </block>
-        </statement>
-        <next>
-          <block type="movement_stop" id="74"></block>
         </next>
       </block>
     </next>
