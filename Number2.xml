@@ -41,62 +41,62 @@
       </block>
     </value>
     <next>
-      <block type="variables_set" id="243" inline="true">
-        <field name="VAR">RedandBlue</field>
-        <value name="VALUE">
-          <block type="math_arithmetic" id="149" inline="true">
-            <field name="OP">ADD</field>
+      <block type="controls_whileUntil" id="10" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="logic_operation" id="301" inline="true">
+            <field name="OP">LAND</field>
             <value name="A">
-              <block type="sensor_spectrometer" id="150">
-                <field name="LIGHT">BLUE</field>
+              <block type="logic_compare" id="417" inline="true">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="287">
+                    <field name="VAR">RedandBlue</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="13">
+                    <field name="NUM">140</field>
+                  </block>
+                </value>
               </block>
             </value>
             <value name="B">
-              <block type="sensor_spectrometer" id="151">
-                <field name="LIGHT">RED</field>
+              <block type="logic_compare" id="430" inline="true">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get" id="431">
+                    <field name="VAR">RedandBlue</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="432">
+                    <field name="NUM">160</field>
+                  </block>
+                </value>
               </block>
             </value>
           </block>
         </value>
-        <next>
-          <block type="controls_whileUntil" id="10" inline="false">
-            <field name="MODE">UNTIL</field>
-            <value name="NUMBER">
-              <block type="logic_operation" id="301" inline="true">
-                <field name="OP">LAND</field>
+        <statement name="DO">
+          <block type="variables_set" id="243" inline="true">
+            <field name="VAR">RedandBlue</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="149" inline="true">
+                <field name="OP">ADD</field>
                 <value name="A">
-                  <block type="logic_compare" id="417" inline="true">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="variables_get" id="287">
-                        <field name="VAR">RedandBlue</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="13">
-                        <field name="NUM">140</field>
-                      </block>
-                    </value>
+                  <block type="sensor_spectrometer" id="150">
+                    <field name="LIGHT">BLUE</field>
                   </block>
                 </value>
                 <value name="B">
-                  <block type="logic_compare" id="430" inline="true">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                      <block type="variables_get" id="431">
-                        <field name="VAR">RedandBlue</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="432">
-                        <field name="NUM">160</field>
-                      </block>
-                    </value>
+                  <block type="sensor_spectrometer" id="151">
+                    <field name="LIGHT">RED</field>
                   </block>
                 </value>
               </block>
             </value>
-            <statement name="DO">
+            <next>
               <block type="procedures_callnoreturn" id="14">
                 <mutation name="subroutineStraight"></mutation>
                 <next>
@@ -393,11 +393,11 @@
                   </block>
                 </next>
               </block>
-            </statement>
-            <next>
-              <block type="movement_stop" id="74"></block>
             </next>
           </block>
+        </statement>
+        <next>
+          <block type="movement_stop" id="74"></block>
         </next>
       </block>
     </next>
