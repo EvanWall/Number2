@@ -15,21 +15,21 @@
       </block>
     </statement>
   </block>
-  <block type="controls_whileUntil" id="5" inline="false" x="123" y="-129">
+  <block type="controls_whileUntil" id="4" inline="false" x="123" y="-129">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="sensor_button" id="6">
+      <block type="sensor_button" id="5">
         <field name="OBJECT">ENTER</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="oled_cleardisplay" id="4">
+      <block type="oled_cleardisplay" id="6">
         <next>
           <block type="variables_set" id="7" inline="true">
             <field name="VAR">Blue</field>
             <value name="VALUE">
               <block type="sensor_spectrometer" id="8">
-                <field name="LIGHT">GREEN</field>
+                <field name="LIGHT">BLUE</field>
               </block>
             </value>
             <next>
@@ -66,7 +66,7 @@
                         <next>
                           <block type="robot_delay" id="16" inline="true">
                             <value name="DELAY">
-                              <block type="math_number" id="30">
+                              <block type="math_number" id="17">
                                 <field name="NUM">250</field>
                               </block>
                             </value>
