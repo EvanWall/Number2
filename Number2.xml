@@ -59,35 +59,35 @@
           </block>
         </statement>
         <next>
-          <block type="movement_stop" id="99">
-            <next>
-              <block type="controls_whileUntil" id="1" inline="false">
-                <field name="MODE">UNTIL</field>
-                <value name="NUMBER">
-                  <block type="logic_compare" id="2" inline="true">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="sensor_spectrometer" id="3">
-                        <field name="LIGHT">BLUE</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="4">
-                        <field name="NUM">80</field>
-                      </block>
-                    </value>
+          <block type="controls_whileUntil" id="1" inline="false">
+            <field name="MODE">UNTIL</field>
+            <value name="NUMBER">
+              <block type="logic_compare" id="2" inline="true">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="sensor_spectrometer" id="3">
+                    <field name="LIGHT">BLUE</field>
                   </block>
                 </value>
-                <statement name="DO">
-                  <block type="variables_set" id="5" inline="true">
-                    <field name="VAR">blue</field>
-                    <value name="VALUE">
-                      <block type="sensor_spectrometer" id="6">
-                        <field name="LIGHT">BLUE</field>
-                      </block>
-                    </value>
+                <value name="B">
+                  <block type="math_number" id="4">
+                    <field name="NUM">80</field>
                   </block>
-                </statement>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="5" inline="true">
+                <field name="VAR">blue</field>
+                <value name="VALUE">
+                  <block type="sensor_spectrometer" id="6">
+                    <field name="LIGHT">BLUE</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="movement_stop" id="99">
                 <next>
                   <block type="controls_whileUntil" id="43" inline="false">
                     <field name="MODE">UNTIL</field>
