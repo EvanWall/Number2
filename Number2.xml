@@ -45,6 +45,24 @@
                     <next>
                       <block type="oled_drawtext" id="20">
                         <field name="TEXT">Blue =</field>
+                        <next>
+                          <block type="procedures_callnoreturn" id="21" inline="false">
+                            <mutation name="subroutineName">
+                              <arg name="value"></arg>
+                              <arg name="row"></arg>
+                            </mutation>
+                            <value name="ARG0">
+                              <block type="variables_get" id="22">
+                                <field name="VAR">Blue</field>
+                              </block>
+                            </value>
+                            <value name="ARG1">
+                              <block type="math_number" id="23">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
@@ -55,6 +73,40 @@
         </next>
       </block>
     </statement>
+    <next>
+      <block type="controls_whileUntil" id="13" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="logic_compare" id="14" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="sensor_spectrometer" id="15">
+                <field name="LIGHT">BLUE</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="16">
+                <field name="NUM">80</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="movement_setmotors" id="28" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="29">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="30">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
   </block>
   <block type="procedures_defnoreturn" id="1" x="667" y="-174">
     <mutation>
@@ -114,54 +166,6 @@
             <field name="TEXT"></field>
           </block>
         </statement>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_callnoreturn" id="21" inline="false" x="146" y="50">
-    <mutation name="subroutineName">
-      <arg name="value"></arg>
-      <arg name="row"></arg>
-    </mutation>
-    <value name="ARG0">
-      <block type="variables_get" id="22">
-        <field name="VAR">Blue</field>
-      </block>
-    </value>
-    <value name="ARG1">
-      <block type="math_number" id="23">
-        <field name="NUM">0</field>
-      </block>
-    </value>
-  </block>
-  <block type="controls_whileUntil" id="13" inline="false" x="199" y="165">
-    <field name="MODE">UNTIL</field>
-    <value name="NUMBER">
-      <block type="logic_compare" id="14" inline="true">
-        <field name="OP">GT</field>
-        <value name="A">
-          <block type="sensor_spectrometer" id="15">
-            <field name="LIGHT">BLUE</field>
-          </block>
-        </value>
-        <value name="B">
-          <block type="math_number" id="16">
-            <field name="NUM">80</field>
-          </block>
-        </value>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="movement_setmotors" id="28" inline="true">
-        <value name="BOTHMOVLEFT">
-          <block type="math_number" id="29">
-            <field name="NUM">100</field>
-          </block>
-        </value>
-        <value name="BOTHMOVRIGHT">
-          <block type="math_number" id="30">
-            <field name="NUM">100</field>
-          </block>
-        </value>
       </block>
     </statement>
   </block>
