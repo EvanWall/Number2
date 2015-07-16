@@ -15,23 +15,23 @@
       </block>
     </statement>
   </block>
-  <block type="oled_cleardisplay" id="4" x="128" y="-182">
-    <next>
-      <block type="controls_whileUntil" id="5" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="sensor_button" id="6">
-            <field name="OBJECT">ENTER</field>
+  <block type="controls_whileUntil" id="5" inline="false" x="123" y="-129">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="6">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="7" inline="true">
+        <field name="VAR">Blue</field>
+        <value name="VALUE">
+          <block type="sensor_spectrometer" id="8">
+            <field name="LIGHT">GREEN</field>
           </block>
         </value>
-        <statement name="DO">
-          <block type="variables_set" id="7" inline="true">
-            <field name="VAR">Blue</field>
-            <value name="VALUE">
-              <block type="sensor_spectrometer" id="8">
-                <field name="LIGHT">GREEN</field>
-              </block>
-            </value>
+        <next>
+          <block type="oled_cleardisplay" id="4">
             <next>
               <block type="oled_setcursor" id="9" inline="true">
                 <value name="STARTX">
@@ -79,8 +79,8 @@
               </block>
             </next>
           </block>
-        </statement>
+        </next>
       </block>
-    </next>
+    </statement>
   </block>
 </xml>
