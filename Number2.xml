@@ -2,8 +2,18 @@
   <block type="controls_whileUntil" id="76" inline="false" x="100" y="-344">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="sensor_spectrometer" id="200">
-        <field name="LIGHT">BLUE</field>
+      <block type="logic_compare" id="224" inline="true">
+        <field name="OP">GT</field>
+        <value name="A">
+          <block type="sensor_spectrometer" id="200">
+            <field name="LIGHT">BLUE</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="231">
+            <field name="NUM">80</field>
+          </block>
+        </value>
       </block>
     </value>
     <statement name="DO">
