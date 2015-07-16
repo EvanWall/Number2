@@ -136,15 +136,6 @@
             </value>
           </block>
         </value>
-        <statement name="DO0">
-          <block type="oled_drawnumber" id="29" inline="true">
-            <value name="NUMBER">
-              <block type="variables_get" id="30">
-                <field name="VAR">value</field>
-              </block>
-            </value>
-          </block>
-        </statement>
         <value name="IF1">
           <block type="logic_compare" id="31" inline="true">
             <field name="OP">GT</field>
@@ -170,6 +161,15 @@
             <field name="TEXT"></field>
           </block>
         </statement>
+        <next>
+          <block type="oled_drawnumber" id="29" inline="true">
+            <value name="NUMBER">
+              <block type="variables_get" id="30">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
