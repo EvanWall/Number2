@@ -33,56 +33,36 @@
               </block>
             </value>
             <next>
-              <block type="variables_set" id="6" inline="true">
-                <field name="VAR">ir940</field>
-                <value name="VALUE">
-                  <block type="sensor_spectrometer" id="7">
-                    <field name="LIGHT">IR940</field>
+              <block type="oled_setcursor" id="10" inline="true">
+                <value name="STARTX">
+                  <block type="math_number" id="11">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <value name="STARTY">
+                  <block type="math_number" id="12">
+                    <field name="NUM">0</field>
                   </block>
                 </value>
                 <next>
-                  <block type="variables_set" id="8" inline="true">
-                    <field name="VAR">Red</field>
-                    <value name="VALUE">
-                      <block type="sensor_spectrometer" id="9">
-                        <field name="LIGHT">RED</field>
-                      </block>
-                    </value>
+                  <block type="oled_drawtext" id="13">
+                    <field name="TEXT">Blue = </field>
                     <next>
-                      <block type="oled_setcursor" id="10" inline="true">
-                        <value name="STARTX">
-                          <block type="math_number" id="11">
-                            <field name="NUM">10</field>
+                      <block type="procedures_callnoreturn" id="14" inline="false">
+                        <mutation name="displayValue">
+                          <arg name="value"></arg>
+                          <arg name="row"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="variables_get" id="15">
+                            <field name="VAR">Blue</field>
                           </block>
                         </value>
-                        <value name="STARTY">
-                          <block type="math_number" id="12">
+                        <value name="ARG1">
+                          <block type="math_number" id="16">
                             <field name="NUM">0</field>
                           </block>
                         </value>
-                        <next>
-                          <block type="oled_drawtext" id="13">
-                            <field name="TEXT">Blue = </field>
-                            <next>
-                              <block type="procedures_callnoreturn" id="14" inline="false">
-                                <mutation name="displayValue">
-                                  <arg name="value"></arg>
-                                  <arg name="row"></arg>
-                                </mutation>
-                                <value name="ARG0">
-                                  <block type="variables_get" id="15">
-                                    <field name="VAR">Blue</field>
-                                  </block>
-                                </value>
-                                <value name="ARG1">
-                                  <block type="math_number" id="16">
-                                    <field name="NUM">0</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
                       </block>
                     </next>
                   </block>
