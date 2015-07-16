@@ -37,24 +37,6 @@
                 <next>
                   <block type="oled_drawtext" id="20">
                     <field name="TEXT">Blue =</field>
-                    <next>
-                      <block type="procedures_callnoreturn" id="21" inline="false">
-                        <mutation name="subroutineName">
-                          <arg name="value"></arg>
-                          <arg name="row"></arg>
-                        </mutation>
-                        <value name="ARG0">
-                          <block type="variables_get" id="22">
-                            <field name="VAR">Blue</field>
-                          </block>
-                        </value>
-                        <value name="ARG1">
-                          <block type="math_number" id="23">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                      </block>
-                    </next>
                   </block>
                 </next>
               </block>
@@ -124,6 +106,22 @@
         </statement>
       </block>
     </statement>
+  </block>
+  <block type="procedures_callnoreturn" id="21" inline="false" x="146" y="50">
+    <mutation name="subroutineName">
+      <arg name="value"></arg>
+      <arg name="row"></arg>
+    </mutation>
+    <value name="ARG0">
+      <block type="variables_get" id="22">
+        <field name="VAR">Blue</field>
+      </block>
+    </value>
+    <value name="ARG1">
+      <block type="math_number" id="23">
+        <field name="NUM">0</field>
+      </block>
+    </value>
   </block>
   <block type="controls_whileUntil" id="13" inline="false" x="130" y="155">
     <field name="MODE">UNTIL</field>
