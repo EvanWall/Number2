@@ -23,15 +23,15 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="variables_set" id="7" inline="true">
-        <field name="VAR">Blue</field>
-        <value name="VALUE">
-          <block type="sensor_spectrometer" id="8">
-            <field name="LIGHT">GREEN</field>
-          </block>
-        </value>
+      <block type="oled_cleardisplay" id="4">
         <next>
-          <block type="oled_cleardisplay" id="4">
+          <block type="variables_set" id="7" inline="true">
+            <field name="VAR">Blue</field>
+            <value name="VALUE">
+              <block type="sensor_spectrometer" id="8">
+                <field name="LIGHT">GREEN</field>
+              </block>
+            </value>
             <next>
               <block type="oled_setcursor" id="9" inline="true">
                 <value name="STARTX">
