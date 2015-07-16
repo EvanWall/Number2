@@ -280,19 +280,19 @@
                                                                                                 <next>
                                                                                                   <block type="movement_forward" id="65">
                                                                                                     <next>
-                                                                                                      <block type="variables_set" id="585" inline="true">
+                                                                                                      <block type="variables_set" id="627" inline="true">
                                                                                                         <field name="VAR">Turn</field>
                                                                                                         <value name="VALUE">
-                                                                                                          <block type="math_arithmetic" id="557" inline="true">
+                                                                                                          <block type="math_arithmetic" id="628" inline="true">
                                                                                                             <field name="OP">MULTIPLY</field>
                                                                                                             <value name="A">
-                                                                                                              <block type="variables_get" id="559">
-                                                                                                                <field name="VAR">Turn</field>
+                                                                                                              <block type="math_number" id="629">
+                                                                                                                <field name="NUM">-1</field>
                                                                                                               </block>
                                                                                                             </value>
                                                                                                             <value name="B">
-                                                                                                              <block type="math_number" id="558">
-                                                                                                                <field name="NUM">-1</field>
+                                                                                                              <block type="variables_get" id="630">
+                                                                                                                <field name="VAR">Turn</field>
                                                                                                               </block>
                                                                                                             </value>
                                                                                                           </block>
