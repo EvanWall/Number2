@@ -94,7 +94,7 @@
       </block>
     </next>
   </block>
-  <block type="controls_if" id="25" inline="false" x="683" y="-62">
+  <block type="controls_if" id="25" inline="false" x="558" y="-80">
     <mutation elseif="1" else="1"></mutation>
     <value name="IF0">
       <block type="logic_compare" id="26" inline="true">
@@ -126,16 +126,6 @@
         </value>
       </block>
     </value>
-    <statement name="DO1">
-      <block type="oled_drawtext" id="32">
-        <field name="TEXT"></field>
-      </block>
-    </statement>
-    <statement name="ELSE">
-      <block type="oled_drawtext" id="33">
-        <field name="TEXT"></field>
-      </block>
-    </statement>
   </block>
   <block type="controls_whileUntil" id="17" inline="false" x="301" y="182">
     <field name="MODE">UNTIL</field>
