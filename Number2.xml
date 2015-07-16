@@ -75,40 +75,6 @@
             </next>
           </block>
         </statement>
-        <next>
-          <block type="controls_whileUntil" id="17" inline="false">
-            <field name="MODE">UNTIL</field>
-            <value name="NUMBER">
-              <block type="logic_compare" id="18" inline="true">
-                <field name="OP">GT</field>
-                <value name="A">
-                  <block type="sensor_spectrometer" id="19">
-                    <field name="LIGHT">BLUE</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <block type="math_number" id="20">
-                    <field name="NUM">80</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="movement_setmotors" id="21" inline="true">
-                <value name="BOTHMOVLEFT">
-                  <block type="math_number" id="22">
-                    <field name="NUM">100</field>
-                  </block>
-                </value>
-                <value name="BOTHMOVRIGHT">
-                  <block type="math_number" id="23">
-                    <field name="NUM">100</field>
-                  </block>
-                </value>
-              </block>
-            </statement>
-          </block>
-        </next>
       </block>
     </next>
   </block>
@@ -170,6 +136,38 @@
             </value>
           </block>
         </next>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_whileUntil" id="17" inline="false" x="301" y="182">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="logic_compare" id="18" inline="true">
+        <field name="OP">GT</field>
+        <value name="A">
+          <block type="sensor_spectrometer" id="19">
+            <field name="LIGHT">BLUE</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="20">
+            <field name="NUM">80</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="movement_setmotors" id="21" inline="true">
+        <value name="BOTHMOVLEFT">
+          <block type="math_number" id="22">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="BOTHMOVRIGHT">
+          <block type="math_number" id="23">
+            <field name="NUM">100</field>
+          </block>
+        </value>
       </block>
     </statement>
   </block>
